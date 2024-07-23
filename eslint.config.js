@@ -13,7 +13,21 @@ module.exports = tseslint.config(
       ...angular.configs.tsRecommended,
     ],
     processor: angular.processInlineTemplates,
-    rules: {},
+    rules: {
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          selector: "class",
+          format: ["PascalCase"],
+          prefix: ["Luna"],
+        },
+        {
+          selector: "interface",
+          format: ["PascalCase"],
+          prefix: ["Luna"],
+        },
+      ],
+    },
   },
   {
     files: ["**/*.html"],
